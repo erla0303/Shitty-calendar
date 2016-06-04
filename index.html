@@ -1,0 +1,63 @@
+<!doctype html>
+
+<html>
+
+	<head>
+
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<link type="text/css" rel="stylesheet" href="reset.css" />
+		<link type="text/css" rel="stylesheet" href="style.css" />
+		<link href='https://fonts.googleapis.com/css?family=Roboto&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<title>Material Design Calendar</title>
+
+	</head>
+
+	<body background="dag.png">
+		<a href="month.html"> <i class="material-icons" id="calendar">date_range</i></a>
+		<ul id="menu"></ul>
+		
+		<div class="card card-1">
+			<p id="year"> År </p>
+			<p id="day"> Dag </p>
+			<p id="month"> Månad </p>
+		</div>
+ 
+  <script>
+
+  var currentTime = new Date()           //
+  var month = currentTime.getMonth() + 1 // Current date
+  var day = currentTime.getDate()        // saved to variable
+  var year = currentTime.getFullYear()   //
+
+
+  var currentmonth = ["Januari", "Februari", "Mars", "April", "Maj", "Juni", "Juli", "Augusti", "September", "Oktober", "November", "December"]; //Month to name
+
+
+
+ document.getElementById("year").innerHTML = year; // Writes out current year
+ document.getElementById("day").innerHTML = day+':e'; // Writes out current day
+ document.getElementById("month").innerHTML = currentmonth[month -1]; //Writes out current month
+
+
+
+var today = new Date().getHours(); 
+if (today >= 5 && today <= 18) {
+   if (document.body) {
+            document.body.background = 'dag.jpg';  //Canges background if clock is >5 but <18
+        }
+    } else {
+        if (document.body) {
+            document.body.background = 'natt.png'; //changes background if clock is >18 but <5
+        }
+		  }
+ 
+
+
+  </script>
+
+
+</body>
+
+
+</html>
